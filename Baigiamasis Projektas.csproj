@@ -65,13 +65,19 @@
   <ItemGroup>
     <Compile Include="Drivers\Browsers.cs" />
     <Compile Include="Drivers\CustomDrivers.cs" />
+    <Compile Include="Pages\AddItemToCartPage.cs" />
     <Compile Include="Pages\BasePage.cs" />
+    <Compile Include="Pages\LoginToPage.cs" />
+    <Compile Include="Pages\RegistrationPage.cs" />
     <Compile Include="Pages\SelectOctopusPage.cs" />
-    <Compile Include="Pages\wrongLoginPage.cs" />
+    <Compile Include="Pages\WrongLoginPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tests\AddPlateToCartTest.cs" />
     <Compile Include="Tests\BaseTest.cs" />
-    <Compile Include="Tests\searchForOctopusTest.cs" />
-    <Compile Include="Tests\wrongEmailAndPaswordInputTest.cs" />
+    <Compile Include="Tests\LoginToAccountTest.cs" />
+    <Compile Include="Tests\SearchForOctopusTest.cs" />
+    <Compile Include="Tests\SuccessfulRegistrationTest.cs" />
+    <Compile Include="Tests\WrongEmailAndPaswordInputTest.cs" />
     <Compile Include="Tools\MyScreenshot.cs" />
   </ItemGroup>
   <ItemGroup>

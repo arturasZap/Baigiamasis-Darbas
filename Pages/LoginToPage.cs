@@ -4,10 +4,11 @@ using System.Threading;
 
 namespace Baigiamasis_Projektas.Pages
 {
-    internal class WrongLoginPage : BasePage
-
+    internal class LoginToPage : BasePage
     {
-        public WrongLoginPage(IWebDriver webDriver) : base(webDriver) { }
+
+
+        public LoginToPage(IWebDriver webDriver) : base(webDriver) { }
 
 
         private const string PageAddress = "https://www.astuonkojis.lt/";
@@ -18,16 +19,14 @@ namespace Baigiamasis_Projektas.Pages
 
         private IWebElement _emailInputField => Driver.FindElement(By.CssSelector("#login_form_modal > div > div > div:nth-child(1) > input"));
 
-        private IWebElement _paswordInputField => Driver.FindElement(By.XPath("//*[@id=\"login_form_modal\"]/div/div/div[2]/input"));
+        private IWebElement _paswordInputField => Driver.FindElement(By.CssSelector("#login_form_modal > div > div > div:nth-child(2) > input"));
 
-        private IWebElement _submitButton => Driver.FindElement(By.CssSelector("#login_form_modal > div > div > a.reg-btn.fl.btn1.submit-button.a0.mt15"));
+        private IWebElement _loginButton => Driver.FindElement(By.CssSelector("#login_form_modal > div > div > a.reg-btn.fl.btn1.submit-button.a0.mt15"));
 
-        private IWebElement _errorMessage => Driver.FindElement(By.ClassName("error-message"));
-
-
+        private IWebElement _findAccountId => Driver.FindElement(By.Id("account_on"));
 
 
-        public WrongLoginPage AgePopUpAgree()
+        public LoginToPage AgePopUpAgree()
 
         {
             _popUpAge.Click();
@@ -36,16 +35,16 @@ namespace Baigiamasis_Projektas.Pages
 
         }
 
-        public WrongLoginPage LoginLogoClick()
+        public LoginToPage ClickOnLoginLogo()
+
+
         {
-            Thread.Sleep(5000);
+            Thread.Sleep(1500);
             _ = ((IJavaScriptExecutor)Driver).ExecuteScript("arguments[0].click();", _loginLogo);
             return this;
         }
 
-
-
-        public WrongLoginPage EmailInputField(string email)
+        public LoginToPage EmailInput(string email)
 
         {
             _emailInputField.Clear();
@@ -54,7 +53,7 @@ namespace Baigiamasis_Projektas.Pages
             return this;
         }
 
-        public WrongLoginPage PaswordInputField(string pasword)
+        public LoginToPage PaswordInput(string pasword)
 
         {
             _paswordInputField.Clear();
@@ -62,21 +61,24 @@ namespace Baigiamasis_Projektas.Pages
 
             return this;
         }
-        public WrongLoginPage ClickSubmitButton()
+
+        public LoginToPage ClickLoginButton()
 
         {
-            _submitButton.Click();
+            _loginButton.Click();
 
             return this;
         }
-        public WrongLoginPage LoginErrorShown()
+
+        public LoginToPage FindAcount()
 
         {
-            Assert.AreEqual(By.Id("d9df2dd7-9960-429b-9932-6554abf9d5ba"), By.Id("d9df2dd7-9960-429b-9932-6554abf9d5ba"));
+            Assert.That(_findAccountId, Is.EqualTo(_findAccountId));
+
             return this;
         }
 
-        public WrongLoginPage NavigateToDefaultPage()
+        public LoginToPage NavigateToDefaultPage()
         {
             if (Driver.Url != PageAddress)
             {
@@ -87,5 +89,4 @@ namespace Baigiamasis_Projektas.Pages
         }
 
     }
-
 }

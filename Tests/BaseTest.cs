@@ -12,7 +12,10 @@ namespace Baigiamasis_Projektas.Tests
         protected static IWebDriver Driver;
 
         public static SelectOctopusPage _selectPage;
-        public static wrongLoginPage _wrongLoginPage;
+        public static WrongLoginPage _wrongLoginPage;
+        public static AddItemToCartPage _addItemToCartPage;
+        public static RegistrationPage _registrationPage;
+        public static LoginToPage _loginToPage;
 
         [OneTimeSetUp]
         public static void SetUp()
@@ -20,7 +23,12 @@ namespace Baigiamasis_Projektas.Tests
             Driver = CustomDriver.GetChromeDriver();
 
             _selectPage = new SelectOctopusPage(Driver);
-            _wrongLoginPage = new wrongLoginPage(Driver);
+            _wrongLoginPage = new WrongLoginPage(Driver);
+            _addItemToCartPage = new AddItemToCartPage(Driver);
+            _registrationPage = new RegistrationPage(Driver);
+            _loginToPage = new LoginToPage(Driver);
+
+
             Driver.Manage().Window.Maximize();
         }
 

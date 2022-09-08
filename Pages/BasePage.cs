@@ -19,10 +19,7 @@ namespace Baigiamasis_Projektas.Pages
             return wait;
         }
 
-        public void ScrollDown()
-        {
-            _ = ((IJavaScriptExecutor)Driver).ExecuteScript("window.scrollTo(0, document.body.scrollHeight + 150)");
-        }
+
 
         public void CloseBrowser()
         {

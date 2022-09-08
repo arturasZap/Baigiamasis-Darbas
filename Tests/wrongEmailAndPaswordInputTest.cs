@@ -2,15 +2,15 @@
 
 namespace Baigiamasis_Projektas.Tests
 {
-    internal class wrongEmailAndPaswordInputTest : BaseTest
+    internal class WrongEmailAndPaswordInputTest : BaseTest
     {
         [Test]
 
         public static void TestingWrongLoginCredits()
 
         {
-            string email = "vcs@mokausi.lt";
-            string password = "astuonkojis";
+            string email = "mail@what.com";
+            string password = "mokausi";
 
             _ = _wrongLoginPage.NavigateToDefaultPage();
             _ = _wrongLoginPage.AgePopUpAgree();

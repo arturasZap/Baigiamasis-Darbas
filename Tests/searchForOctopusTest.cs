@@ -2,7 +2,7 @@
 
 namespace Baigiamasis_Projektas.Tests
 {
-    internal class searchForOctopusTest : BaseTest
+    internal class SearchForOctopusTest : BaseTest
     {
 
         [Test]
