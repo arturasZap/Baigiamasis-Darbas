@@ -8,8 +8,8 @@ namespace Baigiamasis_Projektas.Tests
         public static void RegistrationSuccess()
 
         {
-            string name = "Baigiamasis";
-            string email = "vilniuscodschool@gmail.com";
+            string name = "aghji";
+            string email = "mkklks@gmail.com";
             string pasword = "pipirass";
             string paswordR = "pipirass";
 

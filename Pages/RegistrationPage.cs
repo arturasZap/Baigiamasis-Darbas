@@ -29,8 +29,7 @@ namespace Baigiamasis_Projektas.Pages
 
         private IWebElement _clickSubmitButton => Driver.FindElement(By.XPath("//*[@id=\"physical_register_form\"]/div[3]/a"));
 
-        private IWebElement _resultCheck => Driver.FindElement(By.CssSelector("#middle_content > h2"));
-
+        private IWebElement _resultCheck => Driver.FindElement(By.LinkText("Jūsų registracija sėkminga"));
 
 
 
@@ -101,7 +100,7 @@ namespace Baigiamasis_Projektas.Pages
         public RegistrationPage ResultCheck()
 
         {
-            Assert.That("Jūsų registracija sėkminga", Is.EqualTo("Jūsų registracija sėkminga"));
+            Assert.Pass("Jūsų registracija sėkminga");
 
             return this;
         }

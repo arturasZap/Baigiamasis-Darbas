@@ -17,7 +17,7 @@ namespace Baigiamasis_Projektas.Pages
 
         private IWebElement _octopus => Driver.FindElement(By.XPath("//*[@id=\"block_catalogmenu_body\"]/ul/li[1]"));
 
-        private IWebElement _resultOfSearch => Driver.FindElement(By.Id("heading1"));
+        private IWebElement _resultOfSearch => Driver.FindElement(By.LinkText("Aštuonkojai"));
 
         private IWebElement _popUpAge => Driver.FindElement(By.CssSelector("#age-verification > a.button.yes.fl"));
 
@@ -63,7 +63,7 @@ namespace Baigiamasis_Projektas.Pages
 
         public SelectOctopusPage ResultOfSearch()
         {
-            Assert.AreEqual("Aštuonkojai", "Aštuonkojai");
+            Assert.AreEqual("Aštuonkojai", _resultOfSearch.Text);
             return this;
 
         }

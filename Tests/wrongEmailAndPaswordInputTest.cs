@@ -18,7 +18,7 @@ namespace Baigiamasis_Projektas.Tests
             _ = _wrongLoginPage.EmailInputField(email);
             _ = _wrongLoginPage.PaswordInputField(password);
             _ = _wrongLoginPage.ClickSubmitButton();
-            _ = _wrongLoginPage.LoginErrorShown();
+
         }
     }
 

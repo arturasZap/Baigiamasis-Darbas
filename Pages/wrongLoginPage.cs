@@ -1,5 +1,4 @@
-﻿using NUnit.Framework;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
 using System.Threading;
 
 namespace Baigiamasis_Projektas.Pages
@@ -22,8 +21,6 @@ namespace Baigiamasis_Projektas.Pages
 
         private IWebElement _submitButton => Driver.FindElement(By.CssSelector("#login_form_modal > div > div > a.reg-btn.fl.btn1.submit-button.a0.mt15"));
 
-        private IWebElement _errorMessage => Driver.FindElement(By.ClassName("error-message"));
-
 
 
 
@@ -38,7 +35,7 @@ namespace Baigiamasis_Projektas.Pages
 
         public WrongLoginPage LoginLogoClick()
         {
-            Thread.Sleep(5000);
+            Thread.Sleep(1000);
             _ = ((IJavaScriptExecutor)Driver).ExecuteScript("arguments[0].click();", _loginLogo);
             return this;
         }
@@ -69,12 +66,7 @@ namespace Baigiamasis_Projektas.Pages
 
             return this;
         }
-        public WrongLoginPage LoginErrorShown()
 
-        {
-            Assert.AreEqual(By.Id("d9df2dd7-9960-429b-9932-6554abf9d5ba"), By.Id("d9df2dd7-9960-429b-9932-6554abf9d5ba"));
-            return this;
-        }
 
         public WrongLoginPage NavigateToDefaultPage()
         {
